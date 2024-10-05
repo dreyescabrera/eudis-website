@@ -1,16 +1,95 @@
 ---
-
+import profileImg from "@/assets/images/profile.webp";
+import Chip from "@/components/common/chip.astro";
+import Link from "@/components/common/link.astro";
+import MainLayout from "@/layouts/main-layout.astro";
+import telegramSvg from "@/assets/icons/telegram.svg?raw";
+import linkedinSvg from "@/assets/icons/linkedin.svg?raw";
+import xSvg from "@/assets/icons/x.svg?raw";
+import SocialMediaButton from "@/components/common/social-media-button.astro";
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<MainLayout title="Eudis - UX/UI Designer">
+  <section
+    class="animate-fadeIn flex flex-col items-center justify-center opacity-0"
+    style={{
+      "--fade-in-delay": "100ms",
+    }}
+  >
+    <img
+      class="size-14 rounded-full ring-1 ring-gray-700"
+      src={profileImg.src}
+      alt="Eudis Alvarez"
+    />
+
+    <h1 class="mb-2.5 mt-5">I'm Eudis, a UX/UI designer from Venezuela.</h1>
+
+    <p class="leading-tight text-zinc-400">
+      I have a passion for creating intuitive and visually appealing digital
+      experiences.
+    </p>
+  </section>
+
+  <nav class="my-10">
+    <ul class="space-y-5">
+      <li
+        class="animate-fadeIn opacity-0"
+        style={{ "--fade-in-delay": "300ms" }}
+      >
+        <Link href="/about" title="Text here"
+          >Text Here <Chip label="New" /></Link
+        >
+      </li>
+      <li
+        class="animate-fadeIn opacity-0"
+        style={{ "--fade-in-delay": "400ms" }}
+      >
+        <Link href="/portfolio" title="My portfolio">My portfolio</Link>
+      </li>
+      <li
+        class="animate-fadeIn opacity-0"
+        style={{ "--fade-in-delay": "500ms" }}
+      >
+        <Link href="/contact" title="Contact me">Contact me</Link>
+      </li>
+      <li
+        class="animate-fadeIn opacity-0"
+        style={{ "--fade-in-delay": "700ms" }}
+      >
+        <Link
+          >Design Agency <span
+            slot="right"
+            class="rounded-lg px-2 py-0.5 text-sm ring-1 ring-gray-800"
+          >
+            Coming soon</span
+          ></Link
+        >
+      </li>
+    </ul>
+  </nav>
+
+  <ul
+    class="animate-fadeIn flex justify-evenly gap-2.5 px-14 opacity-0"
+    style={{
+      "--fade-in-delay": "600ms",
+    }}
+  >
+    <li>
+      <SocialMediaButton
+        href="https://t.me/xahevx"
+        icon={telegramSvg}
+        title="Telegram"
+      />
+    </li>
+    <li>
+      <SocialMediaButton
+        href="https://www.linkedin.com/in/eudis/"
+        title="LinkedIn"
+        icon={linkedinSvg}
+      />
+    </li>
+    <li>
+      <SocialMediaButton href="https://x.com/eudesign" icon={xSvg} title="X" />
+    </li>
+  </ul>
+</MainLayout>

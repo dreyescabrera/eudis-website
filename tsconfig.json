@@ -1,3 +1,14 @@
 {
+  "compilerOptions": {
+    "target": "es2022",
+    "lib": ["es2023", "DOM", "DOM.Iterable"],
+    "skipLibCheck": true,
+    "baseUrl": ".",
+    "allowJs": true,
+    "checkJs": true,
+    "paths": {
+      "@/*": ["./src/*"]
+    }
+  },
   "extends": "astro/tsconfigs/base"
 }

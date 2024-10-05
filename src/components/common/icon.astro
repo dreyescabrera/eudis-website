@@ -1,0 +1,24 @@
+---
+import type { HTMLAttributes } from "astro/types";
+
+interface Props extends HTMLAttributes<"svg"> {
+  icon: string;
+}
+
+const { icon, ...attributes } = Astro.props;
+
+function addAttributesToInnerHTMLString(
+  innerHTML: string,
+  attributes: HTMLAttributes<"svg"> = {},
+) {
+  const attributesString = Object.entries(attributes)
+    .map(([key, value]) => `${key}="${value}"`)
+    .join(" ");
+
+  return innerHTML.replace(/^<svg/, `<svg ${attributesString}`);
+}
+
+const svg = addAttributesToInnerHTMLString(icon, attributes);
+---
+
+<Fragment set:html={svg} />

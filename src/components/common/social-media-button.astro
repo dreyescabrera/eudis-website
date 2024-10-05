@@ -1,0 +1,21 @@
+---
+import Icon from "./icon.astro";
+
+interface Props {
+  href: string;
+  icon: string;
+  title?: string;
+}
+
+const { href, icon, title } = Astro.props;
+---
+
+<a
+  href={href}
+  aria-label={title}
+  rel="noopener noreferrer"
+  target="_blank"
+  class="group flex items-center justify-center rounded-lg p-2 ring-1 ring-gray-700 transition-colors hover:bg-white hover:text-black hover:ring-white"
+>
+  <Icon icon={icon} class="fill-current" />
+</a>

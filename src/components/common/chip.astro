@@ -1,0 +1,23 @@
+---
+import tw from "@/utils/tw";
+
+type ChipColor = "cyan" | "green";
+
+interface Props {
+  label: string;
+  color?: ChipColor;
+}
+
+const { label, color = "cyan" } = Astro.props;
+
+const colors: Record<ChipColor, string> = {
+  cyan: tw`from-cyan-600 to-cyan-300`,
+  green: tw`from-green-500 to-green-100`,
+};
+---
+
+<span
+  class={`inline-flex items-center justify-center rounded-full bg-gradient-to-b px-2.5 py-0.5 text-sm font-medium text-white ${colors[color]}`}
+>
+  {label}
+</span>

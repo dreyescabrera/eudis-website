@@ -1,0 +1,30 @@
+---
+import Icon from "./icon.astro";
+import KeyboardArrowRightIcon from "@material-symbols/svg-400/outlined/keyboard_arrow_right.svg?raw";
+
+interface Props {
+  href?: string;
+  title?: string;
+}
+
+const { href, title } = Astro.props;
+
+const Component = href ? "a" : "div";
+---
+
+<Component
+  href={href}
+  aria-label={title}
+  class={`group flex w-full items-center justify-between gap-2.5 ${href ? "" : "text-gray-400"}`}
+>
+  <div class="flex items-center gap-2.5">
+    <slot />
+  </div>
+
+  <slot name="right">
+    <Icon
+      icon={KeyboardArrowRightIcon}
+      class="size-5 fill-current transition-transform group-hover:translate-x-1"
+    />
+  </slot>
+</Component>
