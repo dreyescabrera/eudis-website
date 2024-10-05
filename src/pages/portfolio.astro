@@ -8,35 +8,41 @@ import SocialMediaLinks from "@/components/section/social-media-links.astro";
 import MainLayout from "@/layouts/main-layout.astro";
 ---
 
-<MainLayout title="Eudis - Portfolio">
+<MainLayout title="Eudis - Portfolio" description="My Latest Projects">
   <Header title="Portfolio" description="My Latest Projects" />
 
   <nav class="my-10">
     <ul class="space-y-5">
       <li>
         <FadeIn delay="300ms">
-          <Link href="https://torqapp.io" title="Torq App"
+          <Link href="https://torqapp.io" title="Torq App" target="_blank"
             >Torq App <Chip label="New" /></Link
           >
         </FadeIn>
       </li>
       <li>
         <FadeIn delay="400ms">
-          <Link href="https://rockultrasound.com" title="Rock Ultrasound"
+          <Link
+            href="https://rockultrasound.com"
+            title="Rock Ultrasound"
+            target="_blank"
             >Rock Ultrasound <Chip label="2024" color="green" /></Link
           >
         </FadeIn>
       </li>
       <li>
         <FadeIn delay="500ms">
-          <Link href="https://mightyshieldinsurance.com" title="Mighty Shield"
+          <Link
+            href="https://mightyshieldinsurance.com"
+            title="Mighty Shield"
+            target="_blank"
             >Mighty Shield <Chip label="2023" color="green" /></Link
           >
         </FadeIn>
       </li>
       <li>
         <FadeIn delay="600ms">
-          <Link href="https://www.instagram.com/pidespeed/"
+          <Link href="https://www.instagram.com/pidespeed/" target="_blank"
             >PideSpeed <Chip label="2022" color="green" /></Link
           >
         </FadeIn>

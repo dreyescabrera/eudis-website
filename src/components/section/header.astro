@@ -3,7 +3,6 @@ import arrowLeftAltSvg from "@material-symbols/svg-400/outlined/arrow_left_alt.s
 import profileImg from "@/assets/images/profile.webp";
 import FadeIn from "../common/fade-in.astro";
 import Icon from "../common/icon.astro";
-import { Image } from "astro:assets";
 
 interface Props {
   title: string;
@@ -17,7 +16,7 @@ const isRoot = Astro.url.pathname === "/";
 
 <FadeIn delay="100ms">
   <header class="relative flex flex-col items-center justify-center">
-    <Image
+    <img
       width={60}
       height={60}
       class="rounded-full ring-1 ring-gray-700"

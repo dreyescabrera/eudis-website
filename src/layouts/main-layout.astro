@@ -3,9 +3,10 @@ import "@fontsource/inter";
 
 interface Props {
   title: string;
+  description: string;
 }
 
-const { title } = Astro.props;
+const { title, description } = Astro.props;
 ---
 
 <html lang="en">
@@ -14,7 +15,52 @@ const { title } = Astro.props;
     <meta name="viewport" content="width=device-width" />
     <title>{title}</title>
     <meta name="generator" content={Astro.generator} />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <!-- Browser favicons -->
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="/favicon/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="/favicon/favicon-16x16.png"
+    />
+    <link rel="icon" href="/favicon/favicon.ico" />
+
+    <!-- Android favicons -->
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="192x192"
+      href="/favicon/android-chrome-192x192.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="512x512"
+      href="/favicon/android-chrome-512x512.png"
+    />
+
+    <!-- Apple touch icon -->
+    <link rel="apple-touch-icon" href="/favicon/apple-touch-icon.png" />
+
+    <!-- Open Graph -->
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content="/profile-og.jpg" />
+    <meta property="og:url" content={Astro.url.pathname} />
+    <meta property="og:site_name" content="Eudis - UX/UI Designer" />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content="/profile-og.jpg" />
   </head>
   <body
     class="mx-auto min-h-dvh max-w-[21.0625rem] bg-black text-center font-inter text-lg font-medium text-white"
