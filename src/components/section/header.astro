@@ -1,0 +1,41 @@
+---
+import arrowLeftAltSvg from "@material-symbols/svg-400/outlined/arrow_left_alt.svg?raw";
+import profileImg from "@/assets/images/profile.webp";
+import FadeIn from "../common/fade-in.astro";
+import Icon from "../common/icon.astro";
+
+interface Props {
+  title: string;
+  description: string;
+}
+
+const { title, description } = Astro.props;
+
+const isRoot = Astro.url.pathname === "/";
+---
+
+<FadeIn delay="100ms">
+  <header class="relative flex flex-col items-center justify-center">
+    <img
+      class="size-14 rounded-full ring-1 ring-gray-700"
+      src={profileImg.src}
+      alt="Eudis Alvarez"
+    />
+
+    <h1 class="mb-2.5 mt-5 text-balance tracking-tighter">{title}</h1>
+
+    <p class="text-pretty leading-normal text-zinc-400">
+      {description}
+    </p>
+    {
+      !isRoot && (
+        <a
+          href=".."
+          class="absolute left-0 top-0 block rounded-full p-1.5 transition-colors hover:bg-zinc-400/15"
+        >
+          <Icon icon={arrowLeftAltSvg} class="size-7 fill-white" />
+        </a>
+      )
+    }
+  </header>
+</FadeIn>

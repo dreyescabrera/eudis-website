@@ -1,0 +1,59 @@
+---
+import Chip from "@/components/common/chip.astro";
+import FadeIn from "@/components/common/fade-in.astro";
+import GrayscaleChip from "@/components/common/grayscale-chip.astro";
+import Link from "@/components/common/link.astro";
+import Header from "@/components/section/header.astro";
+import SocialMediaLinks from "@/components/section/social-media-links.astro";
+import MainLayout from "@/layouts/main-layout.astro";
+---
+
+<MainLayout title="Eudis - Portfolio">
+  <Header title="Portfolio" description="My Latest Projects" />
+
+  <nav class="my-10">
+    <ul class="space-y-5">
+      <li>
+        <FadeIn delay="300ms">
+          <Link href="#" title="Torq App">Torq App <Chip label="New" /></Link>
+        </FadeIn>
+      </li>
+      <li>
+        <FadeIn delay="400ms">
+          <Link href="#" title="Rock Ultrasound"
+            >Rock Ultrasound <Chip label="2024" color="green" /></Link
+          >
+        </FadeIn>
+      </li>
+      <li>
+        <FadeIn delay="500ms">
+          <Link href="#" title="Mighty Shield"
+            >Mighty Shield <Chip label="2023" color="green" /></Link
+          >
+        </FadeIn>
+      </li>
+      <li>
+        <FadeIn delay="600ms">
+          <Link href="#">PideSpeed <Chip label="2022" color="green" /></Link>
+        </FadeIn>
+      </li>
+      <li>
+        <FadeIn delay="700ms">
+          <Link>
+            <span>Design Agency</span>
+            <GrayscaleChip slot="right">In progress</GrayscaleChip>
+          </Link>
+        </FadeIn>
+      </li>
+      <li>
+        <FadeIn delay="800ms">
+          <Link href="mailto:eudis.vah@gmail.com"> Contact me </Link>
+        </FadeIn>
+      </li>
+    </ul>
+  </nav>
+
+  <FadeIn delay="900ms">
+    <SocialMediaLinks />
+  </FadeIn>
+</MainLayout>

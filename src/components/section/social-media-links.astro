@@ -1,0 +1,26 @@
+---
+import SocialMediaButton from "../common/social-media-button.astro";
+import telegramSvg from "@/assets/icons/telegram.svg?raw";
+import linkedinSvg from "@/assets/icons/linkedin.svg?raw";
+import xSvg from "@/assets/icons/x.svg?raw";
+---
+
+<ul class="flex justify-evenly gap-2.5 px-14">
+  <li>
+    <SocialMediaButton
+      href="https://t.me/xahevx"
+      icon={telegramSvg}
+      title="Telegram"
+    />
+  </li>
+  <li>
+    <SocialMediaButton
+      href="https://www.linkedin.com/in/eudis/"
+      title="LinkedIn"
+      icon={linkedinSvg}
+    />
+  </li>
+  <li>
+    <SocialMediaButton href="https://x.com/eudesign" icon={xSvg} title="X" />
+  </li>
+</ul>

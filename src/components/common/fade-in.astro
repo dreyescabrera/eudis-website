@@ -1,0 +1,11 @@
+---
+interface Props {
+  delay: string;
+}
+
+const { delay } = Astro.props;
+---
+
+<div class="animate-fadeIn opacity-0" style={{ "--fade-in-delay": delay }}>
+  <slot />
+</div>
